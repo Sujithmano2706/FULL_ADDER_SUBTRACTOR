@@ -38,18 +38,90 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
-**Procedure**
+FULL ADDER 
 
-Write the detailed procedure here
+<img width="382" height="350" alt="image" src="https://github.com/user-attachments/assets/7697b89a-e7a5-4bd9-abf5-f72f7c73f549" />
+
+FULL SUBRACTOR
+
+<img width="376" height="350" alt="image" src="https://github.com/user-attachments/assets/2bf08f94-dc71-476d-8728-983b1b9e6a84" />
+
+
+**Procedure**
+```
+Type the program in Quartus software.
+
+Compile and run the program.
+
+Generate the RTL schematic and save the logic diagram.
+
+Create nodes for inputs and outputs to generate the timing diagram.
+
+For different input combinations generate the timing diagram.
+
+```
 
 **Program:**
-
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+```
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+Developed by: SUJITH MANO M
+RegisterNumber: 25018328
 */
+```
+
+```
+FULL ADDER
+
+module exp4(df,bo,a,b,bin);
+output df;
+output bo;
+input a;
+input b;
+input bin;
+wire w1,w2,w3;
+assign w1=a^b;
+assign w2=(~a&b);
+assign w3=(~w1&bin);
+assign df=w1^bin;
+assign bo=w2|w3;
+endmodule
+```
+```
+FULL SUBTRACTOR
+
+module full_subtractor(diff, borrow, a, b, bin);
+  output diff;
+  output borrow;
+  input a;
+  input b;
+  input bin;
+  assign diff = a ^ b ^ bin;
+  assign borrow = (~a & b) | (~(a ^ b) & bin);
+endmodule
+```
 
 **RTL Schematic**
 
+FULL ADDER
+
+<img width="725" height="426" alt="image" src="https://github.com/user-attachments/assets/26b61193-b879-4b92-bacb-3a95786323c5" />
+
+FULL SUBRACTOR
+
+<img width="729" height="267" alt="image" src="https://github.com/user-attachments/assets/7d75e18d-e63b-4093-b8a0-f96e59842365" />
+
+
+
 **Output Timing Waveform**
+
+FULL ADDER
+
+<img width="773" height="287" alt="image" src="https://github.com/user-attachments/assets/29cc19c9-9041-409e-b982-c3e3af645d1c" />
+
+FULL SUBRACTOR
+
+<img width="773" height="268" alt="image" src="https://github.com/user-attachments/assets/f1f63343-9958-495a-a1c0-c155bb92e094" />
+
 
 **Result:**
 
